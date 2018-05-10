@@ -1,0 +1,18 @@
+body{
+    background-color: #ebebeb;
+    height: 3000px;
+}
+
+header.clouds {
+    background-image: url("./images/header_clouds.png");
+    background-repeat: repeat-x;
+    background-size: contain;
+}
+
+div.header {
+    background-image: url("./images/header.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 489px;
+
+}
