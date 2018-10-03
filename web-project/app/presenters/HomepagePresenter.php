@@ -2,9 +2,19 @@
 
 namespace App\Presenters;
 
-use Nette;
+use App\Models\LarpsModel;
 
+class HomepagePresenter extends BasePresenter {
 
-class HomepagePresenter extends Nette\Application\UI\Presenter
-{
+	/** @var LarpsModel */
+	protected $larpsModel;
+
+	public function __construct(LarpsModel $larpsModel) {
+		$this->larpsModel = $larpsModel;
+	}
+
+	public function renderDefault() {
+		$this->template->larps = $this->larpsModel->fetchAll();
+	}
+
 }

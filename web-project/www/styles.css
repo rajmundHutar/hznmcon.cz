@@ -1,4 +1,4 @@
-body{
+body {
     background-color: #ebebeb;
     height: 3000px;
 }
@@ -15,4 +15,92 @@ div.header {
     background-size: contain;
     height: 489px;
 
+}
+
+header ul.nav {
+    padding: 322px 80px 0 20px;
+    width: 100%;
+}
+
+header .nav-item {
+    width: 20%;
+    text-align: center;
+}
+
+header .nav-item a {
+    color: white;
+    font-size: 200%;
+}
+
+header .nav-item a:hover {
+    text-shadow: 0 0 10px #e67a77;
+}
+
+.sub-section {
+
+}
+
+#about .info-box {
+    padding: 20px;
+    background-color: #d1d5d6;
+    margin: 3px;
+}
+
+#larps .larp .title {
+    padding: 45px 0 45px 56px;
+    font-size: 150%;
+}
+
+#larps .larp .title a {
+    color: #000000;
+}
+
+#larps .larp .authors {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#larps .larp .authors .tit {
+    padding: 0 20px 0 34px;
+    font-weight: bold;
+}
+
+#larps .larp .wrapper {
+    background-color: #e3ffbb;
+    padding: 0 0 21px 0;
+}
+
+#larps .larp .text {
+    background-color: #d3d6d7;
+    padding: 60px 50px 65px 50px;
+    margin: 0;
+}
+
+#larps .larp .footer {
+    background-color: #dc857c;
+    text-align: center;
+    padding: 21px;
+}
+
+#larps .larp .footer a {
+    color: #000000;
+}
+
+/* ODD */
+#larps .larp .title.odd {
+    background-color: #a0d05b;
+}
+
+#larps .larp .authors.odd {
+    background-color: #8ab44e;
+}
+
+/* EVEN */
+#larps .larp .title.even {
+    background-color: #669f94;
+}
+
+#larps .larp .authors.even {
+    background-color: #588980;
 }
