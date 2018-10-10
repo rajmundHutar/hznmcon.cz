@@ -4,23 +4,67 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
-header.clouds {
+header.full {
+    position: relative;
+    height: 35vw;
+    max-height: 444px;
+}
+
+header.full div.clouds {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background-image: url("./images/header_clouds.png");
     background-repeat: repeat-x;
     background-size: contain;
 }
 
-div.header {
+header.full div.header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background-image: url("./images/header.png");
     background-repeat: no-repeat;
     background-size: contain;
-    height: 489px;
 
 }
 
+<
+<
+<
+<
+<
+<
+<
+HEAD
 header ul.nav {
     padding: 28.4% 0 0 4.3%;
-    width: 100%;
+
+=
+=
+=
+=
+=
+=
+=
+header.full .homepage-link {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 34vw;
+    height: 19vw;
+    max-width: 420px;
+    max-height: 230px;
+}
+
+header.full ul.nav {
+    padding: 322px 80px 0 20px;
+>>> >>> > d371c84700a356c15bf9ee20479b32d91dba9790 width: 100 %;
 }
 
 header .nav-item {
@@ -36,6 +80,33 @@ header .nav-item a {
 
 header .nav-item a:hover {
     text-shadow: 0 0 10px #e67a77;
+}
+
+header.collapsed {
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    width: 1140px;
+}
+
+header.collapsed div.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url(./images/header_c.png) no-repeat center top;
+    background-size: contain;
+    width: 100%;
+    min-height: 85px;
+}
+
+header.collapsed {
+
+}
+
+header.collapsed ul.nav {
+    position: absolute;
+    padding: 0 80px 0 20px;
+    width: 100%;
 }
 
 .sub-section {
@@ -126,3 +197,27 @@ header .nav-item a:hover {
     min-height: 209px;
     padding: 0 10px 0 10px;
 }
+
+.markdown-content {
+    position: relative;
+}
+
+.markdown-content a.markdown-edit {
+    display: none;
+}
+
+.markdown-content:hover .markdown-edit {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: 1px solid #dc857c;
+    border-radius: 3px;
+    background-color: #ebebeb;
+    padding: 2px 5px 2px 5px;
+}
+
+.hidden {
+    display: none;
+}
+

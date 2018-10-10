@@ -8,57 +8,18 @@
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-	<!-- Google font -->
-	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-
 	<link rel="stylesheet" href="{$baseUrl}/styles.css">
 
-	<title>{ifset title}{include title|stripHtml} | {/ifset}HZNMcon</title>
+	<title>{ifset title}{include title|stripHtml} | {/ifset}Admin - HZNMcon</title>
 </head>
 
 <body>
 <div n:foreach="$flashes as $flash" n:class="flash, $flash->type">{$flash->message}</div>
-
-{capture $navigation}
-	<ul class="nav">
-		<li class="nav-item">
-			<a n:href="Homepage:default#about" class="nav-link">O akci</a>
-		</li>
-		<li class="nav-item">
-			<a n:href="Homepage:default#organisation" class="nav-link">Organizačně</a>
-		</li>
-		<li class="nav-item">
-			<a n:href="Homepage:default#registration" class="nav-link">Přihlašování</a>
-		</li>
-		<li class="nav-item">
-			<a n:href="Homepage:default#larps" class="nav-link">Larpy</a>
-		</li>
-		<li class="nav-item">
-			<a n:href="Homepage:default#larp-workshop" class="nav-link">LarpWorkshop</a>
-		</li>
-	</ul>
-{/capture}
-
 <div class="container">
+	<header class="clouds">
 
-	<header id="full-header" class="full">
-		<div class="clouds">
-			&nbsp;
-		</div>
-		<div class="header">
-			{$navigation}
-		</div>
-		<a n:href="default" class="homepage-link">
-			&nbsp;
-		</a>
+		Hlavička adminu | <a n:href="Homepage:">Zpět na web</a>
 
-	</header>
-
-	<header id="collapsed-header" class="collapsed hidden">
-		<div class="background">
-
-		</div>
-		{$navigation}
 	</header>
 
 	{include content}
@@ -67,7 +28,6 @@
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-	<script src="{$baseUrl}/js/hznmcon.js"></script>
 	<script src="https://nette.github.io/resources/js/netteForms.min.js"></script>
 	<script src="{$baseUrl}/js/hznmcon.js"></script>
 {/block}

@@ -13,5 +13,13 @@ session:
 
 services:
 	router: App\RouterFactory::createRouter
+	## Models
 	- App\Models\GamesModel
+	- App\Models\InfoTextModel
+
+	## Factories
 	- App\Forms\GamesFormFactory
+	- App\Forms\InfoTextFormFactory
+
+	## Helpers
+	- App\Helpers\MarkdownFilter
