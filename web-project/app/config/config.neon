@@ -13,4 +13,5 @@ session:
 
 services:
 	router: App\RouterFactory::createRouter
-	- App\Models\LarpsModel
+	- App\Models\GamesModel
+	- App\Forms\GamesFormFactory

@@ -2,19 +2,19 @@
 
 namespace App\Presenters;
 
-use App\Models\LarpsModel;
+use App\Models\GamesModel;
 
 class HomepagePresenter extends BasePresenter {
 
-	/** @var LarpsModel */
-	protected $larpsModel;
+	/** @var GamesModel */
+	protected $gamesModel;
 
-	public function __construct(LarpsModel $larpsModel) {
-		$this->larpsModel = $larpsModel;
+	public function __construct(GamesModel $gamesModel) {
+		$this->gamesModel = $gamesModel;
 	}
 
 	public function renderDefault() {
-		$this->template->larps = $this->larpsModel->fetchAll();
+		$this->template->larps = $this->gamesModel->fetchAll();
 	}
 
 }
