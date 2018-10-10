@@ -33,24 +33,6 @@ header.full div.header {
 
 }
 
-<
-<
-<
-<
-<
-<
-<
-HEAD
-header ul.nav {
-    padding: 28.4% 0 0 4.3%;
-
-=
-=
-=
-=
-=
-=
-=
 header.full .homepage-link {
     display: block;
     position: absolute;
@@ -63,8 +45,8 @@ header.full .homepage-link {
 }
 
 header.full ul.nav {
-    padding: 322px 80px 0 20px;
->>> >>> > d371c84700a356c15bf9ee20479b32d91dba9790 width: 100 %;
+    padding: 28.4% 0 0 4.3%;
+    width: 100%;
 }
 
 header .nav-item {
