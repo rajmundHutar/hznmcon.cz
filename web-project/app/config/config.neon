@@ -14,3 +14,8 @@ session:
 services:
 	router: App\RouterFactory::createRouter
 	- App\Models\LarpsModel
+	- App\Models\InfoTextModel
+
+	- App\Forms\InfoTextFormFactory
+
+	- App\Helpers\MarkdownFilter

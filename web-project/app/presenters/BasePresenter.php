@@ -2,14 +2,21 @@
 
 namespace App\Presenters;
 
+use App\Helpers\MarkdownFilter;
 use Nette\Application\UI\Presenter;
 
 class BasePresenter extends Presenter {
 
-	protected function createTemplate($class = null) {
-		$template = parent::createTemplate($class);
-		$template->addFilter(null, 'App\Helpers\Filters::common');
-		return $template;
+	/**
+	 * @var MarkdownFilter
+	 * @inject
+	 */
+	public $markdownFilter;
+
+	protected function beforeRender() {
+
+		$this->template->addFilter('markdown', $this->markdownFilter);
+
 	}
 
 }

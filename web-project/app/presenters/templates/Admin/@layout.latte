@@ -10,52 +10,16 @@
 
 	<link rel="stylesheet" href="{$baseUrl}/styles.css">
 
-	<title>{ifset title}{include title|stripHtml} | {/ifset}HZNMcon</title>
+	<title>{ifset title}{include title|stripHtml} | {/ifset}Admin - HZNMcon</title>
 </head>
 
 <body>
 <div n:foreach="$flashes as $flash" n:class="flash, $flash->type">{$flash->message}</div>
-
-{capture $navigation}
-	<ul class="nav">
-		<li class="nav-item">
-			<a n:href="Homepage:default#about" class="nav-link">O akci</a>
-		</li>
-		<li class="nav-item">
-			<a n:href="Homepage:default#organisation" class="nav-link">Organizačně</a>
-		</li>
-		<li class="nav-item">
-			<a n:href="Homepage:default#registration" class="nav-link">Přihlašování</a>
-		</li>
-		<li class="nav-item">
-			<a n:href="Homepage:default#larps" class="nav-link">Larpy</a>
-		</li>
-		<li class="nav-item">
-			<a n:href="Homepage:default#larp-workshop" class="nav-link">LarpWorkshop</a>
-		</li>
-	</ul>
-{/capture}
-
 <div class="container">
+	<header class="clouds">
 
-	<header id="full-header" class="full">
-		<div class="clouds">
-			&nbsp;
-		</div>
-		<div class="header">
-			{$navigation}
-		</div>
-		<a n:href="default" class="homepage-link">
-			&nbsp;
-		</a>
+		Hlavička adminu | <a n:href="Homepage:">Zpět na web</a>
 
-	</header>
-
-	<header id="collapsed-header" class="collapsed hidden">
-		<div class="background">
-
-		</div>
-		{$navigation}
 	</header>
 
 	{include content}

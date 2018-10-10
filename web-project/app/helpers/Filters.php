@@ -2,27 +2,48 @@
 
 namespace App\Helpers;
 
+use Nette\Application\LinkGenerator;
+use Nette\Security\User;
 use Nette\Utils\Html;
 
-class Filters {
+class MarkdownFilter {
 
-	public static function common($filter, $value) {
-		if (method_exists(__CLASS__, $filter)) {
-			$args = func_get_args();
-			array_shift($args);
-			return call_user_func_array([__CLASS__, $filter], $args);
-		}
+	/** @var User */
+	protected $user;
 
-		return null;
+	/** @var LinkGenerator */
+	protected $linkGenerator;
+
+	public function __construct(User $user, LinkGenerator $generator) {
+		$this->user = $user;
+		$this->linkGenerator = $generator;
 	}
 
-	public static function markdown($markdown) {
+	public function __invoke($markdown, $makrdownId = 'todo') {
 
 		$parsedown = new \Parsedown();
 
-		$html = $parsedown->text($markdown);
+		$content = Html::el('div')
+			->addHtml(self::html($parsedown->text($markdown)))
+			->addAttributes([
+				'class' => 'markdown-content',
+				'data-content' => base64_encode($markdown),
+			]);
 
-		return self::html($html);
+		if (true || $this->user->isLoggedIn()) { // TODO
+
+			// Add link when user is logged in
+			$link = Html::el('a')->addText('Upravit')->addAttributes([
+				'href' => $this->linkGenerator->link('Admin:infoText', ['id' => $makrdownId]),
+				'class' => 'markdown-edit',
+				'data-markdown' => $makrdownId,
+			]);
+
+			$content->addHtml($link);
+
+		}
+
+		return $content;
 
 	}
 
