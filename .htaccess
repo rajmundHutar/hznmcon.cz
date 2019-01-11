@@ -1,2 +1,2 @@
 RewriteEngine On
-RewriteRule (.*) web-project/www/$1 [L]
+RewriteRule (.*) www/$1 [L]
