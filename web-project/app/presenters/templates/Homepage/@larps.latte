@@ -1,7 +1,7 @@
 <div class="row">
 	<div class="col-md-12 text-center">
-		<img src="{$baseUrl}/images/hznm_melouny_oddelovac.png"><br>
-		<img src="{$baseUrl}/images/hznm_larpy.png">
+		<img src="{$baseUrl}/images/hznm_melouny_oddelovac.png" class="img-fluid"><br>
+		<img src="{$baseUrl}/images/hznm_larpy.png" class="img-fluid">
 	</div>
 
 	<div class="col-md-12">
@@ -13,16 +13,21 @@
 
 	<div n:foreach="$larps as $larp" n:class="row, larp, $iterator->isOdd() ? odd : even">
 
-		<div n:class="col-5, title, $iterator->isOdd() ? odd : even">
+		<div n:class="col-md-5, title, $iterator->isOdd() ? odd : even">
 			<a data-toggle="collapse" href="#larp-{$larp['id']}" role="button" aria-expanded="false" aria-controls="larp-{$larp['id']}">{$larp['name']}</a>
 		</div>
-		<div n:class="col-7, authors, $iterator->isOdd() ? odd : even">
+		<div n:class="col-md-7, authors, $iterator->isOdd() ? odd : even">
+			<div class="row">
+				<div class="col-12 col-md-6">
+					<div class="tit">Autoři:</div>
+					<div class="names">{$larp['authors']}</div>
+				</div>
 
-			<div class="tit">Autoři:</div>
-			<div class="names">{$larp['authors']}</div>
-
-			<div class="tit">Uvádí:</div>
-			<div class="names">{$larp['presenters']}</div>
+				<div class="col-12 col-md-6">
+					<div class="tit">Uvádí:</div>
+					<div class="names">{$larp['presenters']}</div>
+				</div>
+			</div>
 
 		</div>
 		<div n:class="col-12, wrapper, $iterator->isOdd() ? odd : even">

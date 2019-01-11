@@ -33,24 +33,34 @@ class AdminPresenter extends BasePresenter {
 		$this->infoTextModel = $infoTextModel;
 	}
 
-	public function createComponentGamesForm() {
+	public function renderGames() {
+		$this->template->games =  $this->gamesModel->fetchAll();
+	}
 
-		return $this->gamesFormFactory->create(function (array $values) {
+	public function renderEditGame(int $id = null) {
 
-			$id = $this->getParameter('id');
-			if ($id) {
-				$values['id'] = $id;
-			}
-
-			$this->gamesModel->save($values);
-			$this->flashMessage('Larp uložen.', \Flash::Success);
-			$this->redirect('default');
-
-		});
+		if ($id) {
+			$game = $this->gamesModel->fetch($id);
+			$this['gamesForm']->setDefaults($game);
+		}
 
 	}
 
-	public function renderInfoText(string $id): void {
+	public function handleDeleteGame(int $id) {
+
+		$this->gamesModel->delete($id);
+		$this->flashMessage('Larp smazán', \Flash::Success);
+		$this->redirect('games');
+
+	}
+
+	public function renderInfoTexts(): void {
+
+		$this->template->texts = $this->infoTextModel->fetchAll();
+
+	}
+
+	public function renderEditText(string $id): void {
 
 		$text = $this->infoTextModel->fetch($id);
 
@@ -65,9 +75,28 @@ class AdminPresenter extends BasePresenter {
 
 			$values['id'] = $this->getParameter('id');
 			$this->infoTextModel->save($values);
+			$this->flashMessage('Infotext uložen.', \Flash::Success);
+			$this->redirect('infoTexts');
 
 
 		});
+	}
+
+	public function createComponentGamesForm() {
+
+		return $this->gamesFormFactory->create(function (array $values) {
+
+			$id = $this->getParameter('id');
+			if ($id) {
+				$values['id'] = $id;
+			}
+
+			$this->gamesModel->save($values);
+			$this->flashMessage('Larp uložen.', \Flash::Success);
+			$this->redirect('games');
+
+		});
+
 	}
 
 }

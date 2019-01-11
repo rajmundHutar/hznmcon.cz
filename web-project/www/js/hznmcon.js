@@ -23,14 +23,14 @@ $(function () {
 
 	$('.carousel').carousel();
 
-	var collapsed = document.getElementById("collapsed-header");
+	var header = document.getElementById("collapsed-nav");
 
 	// When the user scrolls the page, execute myFunction
 	window.onscroll = function () {
-		if (window.pageYOffset > 327) {
-			collapsed.classList.remove("hidden");
+		if (window.pageYOffset > 397) {
+			header.classList.remove('hidden');
 		} else {
-			collapsed.classList.add("hidden");
+			header.classList.add('hidden');
 		}
 	};
 

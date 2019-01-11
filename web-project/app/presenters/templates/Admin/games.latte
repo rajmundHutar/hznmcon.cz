@@ -1,0 +1,33 @@
+{block content}
+
+
+<a n:href="editGame" class="btn btn-primary">Přidat novu hru</a>
+
+<table n:if="$games" class="table">
+	<tr>
+		<th></th>
+		<th>Larp</th>
+		<th>Popis</th>
+	</tr>
+
+	<tr n:foreach="$games as $game">
+		<td>{$game['id']}</td>
+		<td>{$game['name']}</td>
+		<td title="{$game['description']}">
+			{$game['description']|truncate:60}
+		</td>
+		<td>
+			<a n:href="editGame, id => $game['id']">Upravit</a>
+		</td>
+		<td>
+			<a n:href="deleteGame!, id => $game['id']">Smazat</a>
+		</td>
+
+	</tr>
+
+</table>
+
+<p n:if="!$games">
+	Zatím žádné larpy
+</p>
+

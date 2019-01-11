@@ -34,7 +34,7 @@ class MarkdownFilter {
 
 			// Add link when user is logged in
 			$link = Html::el('a')->addText('Upravit')->addAttributes([
-				'href' => $this->linkGenerator->link('Admin:infoText', ['id' => $makrdownId]),
+				'href' => $this->linkGenerator->link('Admin:editText', ['id' => $makrdownId]),
 				'class' => 'markdown-edit',
 				'data-markdown' => $makrdownId,
 			]);

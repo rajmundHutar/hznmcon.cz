@@ -18,6 +18,15 @@ class GamesModel {
 			->fetchPairs('id');
 	}
 
+	public function fetch(int $id) {
+
+		return $this->db
+			->table(\Table::LARPS)
+			->wherePrimary($id)
+			->fetch();
+
+	}
+
 	public function save(array $data) {
 
 		if ($data['id'] ?? null) {

@@ -1,0 +1,16 @@
+{block content}
+
+{form infoTextForm}
+
+	<div class="form-group">
+		{label text /}
+		{input text, class => 'form-control'}
+		<small class="form-text text-muted">Můžeš používat Markdown.</small>
+	</div>
+
+	<div class="form-group">
+		{input ok, class => 'btn btn-primary'}
+		<a n:href="games" class="btn btn-secondary">Zpět</a>
+	</div>
+
+{/form}

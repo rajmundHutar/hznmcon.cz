@@ -4,36 +4,43 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
-header.full {
-    position: relative;
-    height: 35vw;
-    max-height: 444px;
+textarea {
+    min-height: 300px;
 }
 
-header.full div.clouds {
+.container {
+    position: relative;
+}
+
+header.main {
+    min-height: 34vw;
+    width: 100%;
+}
+
+header.main div.clouds {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 10%;
     background-image: url("./images/header_clouds.png");
     background-repeat: repeat-x;
     background-size: contain;
 }
 
-header.full div.header {
+header.main div.header {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 12%;
     background-image: url("./images/header.png");
     background-repeat: no-repeat;
     background-size: contain;
 
 }
 
-header.full .homepage-link {
+header.main .homepage-link {
     display: block;
     position: absolute;
     top: 0;
@@ -44,51 +51,56 @@ header.full .homepage-link {
     max-height: 230px;
 }
 
-header.full ul.nav {
-    padding: 28.4% 0 0 4.3%;
+header.main ul.nav {
+    padding: 29% 0 0 4.6%;
     width: 100%;
 }
 
-header .nav-item {
+header.main .nav-item {
     display: block;
     float: left;
-    padding: 0 1.3% 0 1.3%;
+    padding: 0 0.3% 0 0.8%;
 }
 
-header .nav-item a {
+header.main .nav-item a {
     color: white;
-    font-size: 200%;
+    font-size: 75%;
 }
 
-header .nav-item a:hover {
-    text-shadow: 0 0 10px #e67a77;
+header.main .nav-item a:hover {
+    color: #e67a77;
 }
 
-header.collapsed {
+nav#collapsed-nav {
+    visibility: visible;
+    opacity: 1;
+    transition: visibility 0s, opacity 0.5s linear;
+
     position: fixed;
-    top: 0;
-    z-index: 1000;
-    width: 1140px;
-}
+    top: 30px;
+    right: 30px;
 
-header.collapsed div.background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    background: url(./images/header_c.png) no-repeat center top;
-    background-size: contain;
-    width: 100%;
-    min-height: 85px;
-}
-
-header.collapsed {
 
 }
 
-header.collapsed ul.nav {
-    position: absolute;
-    padding: 0 80px 0 20px;
-    width: 100%;
+nav#collapsed-nav.hidden {
+    visibility: hidden;
+    opacity: 0;
+}
+
+nav#collapsed-nav button {
+    float: right;
+
+    border: 1px solid #dc857c;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: #ebebeb;
+}
+
+nav#collapsed-nav div.navbar-collapse {
+
+    background-color: #ebebeb;
+
 }
 
 .sub-section {
@@ -96,7 +108,7 @@ header.collapsed ul.nav {
 }
 
 #about {
-    margin-top: 0;
+    padding-top: 0;
 }
 
 #organisation .info-box {
@@ -200,6 +212,56 @@ header.collapsed ul.nav {
 }
 
 .hidden {
-    display: none;
+    /*display: none;*/
 }
 
+.admin nav {
+    margin-bottom: 30px;
+}
+
+/* Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) {
+    header.main {
+        min-height: 184px;
+    }
+
+    header.main .nav-item a {
+        font-size: 75%;
+    }
+
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    header.main {
+        min-height: 244px;
+    }
+
+    header.main .nav-item a {
+        font-size: 110%;
+    }
+
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    header.main {
+        min-height: 310px;
+    }
+
+    header.main .nav-item a {
+        font-size: 161%;
+    }
+
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    header.main {
+        min-height: 374px;
+    }
+
+    header.main .nav-item a {
+        font-size: 200%;
+    }
+}

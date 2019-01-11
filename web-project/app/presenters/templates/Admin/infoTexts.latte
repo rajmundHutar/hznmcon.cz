@@ -1,0 +1,25 @@
+{block content}
+
+<table n:if="$texts" class="table">
+	<tr>
+		<th>id</th>
+		<th>Text</th>
+	</tr>
+
+	<tr n:foreach="$texts as $id => $text">
+		<td>{$id}</td>
+		<td title="{$text}">
+			{$text|truncate:60}
+		</td>
+		<td>
+			<a n:href="editText, id => $id">Upravit</a>
+		</td>
+
+	</tr>
+
+</table>
+
+<p n:if="!$texts">
+	Zatím žádné texty
+</p>
+

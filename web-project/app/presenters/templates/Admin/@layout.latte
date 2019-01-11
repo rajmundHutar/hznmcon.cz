@@ -14,13 +14,31 @@
 </head>
 
 <body>
-<div n:foreach="$flashes as $flash" n:class="flash, $flash->type">{$flash->message}</div>
-<div class="container">
-	<header class="clouds">
+<div class="container admin">
+	<header>
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<a class="navbar-brand" href="#">HZNMcon</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
 
-		Hlavička adminu | <a n:href="Homepage:">Zpět na web</a>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item">
+						<a class="nav-link" n:href="Homepage:">Zpět na web</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" n:href="games">Larpy</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" n:href="infoTexts">Infotexty</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
 
 	</header>
+	<div n:foreach="$flashes as $flash" class="alert alert-{$flash->type}">{$flash->message}</div>
 
 	{include content}
 </div>
