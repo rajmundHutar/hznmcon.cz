@@ -211,7 +211,7 @@ nav#collapsed-nav {
     display: none;
 }
 
-.markdown-content:hover .markdown-edit {
+.markdown-content:hover a.markdown-edit {
     display: block;
     position: absolute;
     top: 0;
@@ -229,6 +229,38 @@ nav#collapsed-nav {
 .admin nav {
     margin-bottom: 30px;
 }
+
+.info {
+    display: flex;
+    min-height: 130px;
+}
+
+.info h3 {
+    flex: 1;
+    background-image: url("./images/info_head.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.info div.text {
+    flex: 5;
+    padding: 20px;
+    margin-left: 15px;
+}
+
+.info div.text.odd {
+    background-image: url("./images/info_odd.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.info div.text.even {
+    background-image: url("./images/info_even.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+
 
 /* Extra large devices (large desktops, 1200px and down) */
 @media (max-width: 1200px) {

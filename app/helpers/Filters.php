@@ -21,6 +21,8 @@ class MarkdownFilter {
 
 	public function __invoke($markdown, $makrdownId = 'todo') {
 
+		$markdown = trim($markdown);
+
 		$parsedown = new \Parsedown();
 
 		$content = Html::el('div')
