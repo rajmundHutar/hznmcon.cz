@@ -22,37 +22,34 @@
 {capture $navigation}
 	<ul class="nav">
 		<li class="nav-item">
-			<a n:href="Homepage:default#about" class="nav-link">O akci</a>
+			<a n:href="Homepage:default#about" class="nav-link">aaa</a>
 		</li>
 		<li class="nav-item">
-			<a n:href="Homepage:default#organisation" class="nav-link">Organizačně</a>
+			<a n:href="Homepage:default#organisation" class="nav-link">aaa</a>
 		</li>
 		<li class="nav-item">
-			<a n:href="Homepage:default#registration" class="nav-link">Přihlašování</a>
+			<a n:href="Homepage:default#registration" class="nav-link">aaa</a>
 		</li>
 		<li class="nav-item">
-			<a n:href="Homepage:default#larps" class="nav-link">Larpy</a>
+			<a n:href="Homepage:default#larps" class="nav-link">aaa</a>
 		</li>
 		<li class="nav-item">
-			<a n:href="Homepage:default#larp-workshop" class="nav-link">LarpWorkshop</a>
+			<a n:href="Homepage:default#larp-workshop" class="nav-link">aaa</a>
 		</li>
 	</ul>
 {/capture}
 
-<div class="container">
-
-	<header id="full-header" class="main">
-		<div class="clouds">
-			&nbsp;
-		</div>
-		<div class="header">
-			{$navigation}
-		</div>
+<header id="full-header" class="main">
+	<div class="wrapper">
+		<img src="{$baseUrl}/images/header.png" class="nav-background">
+		{$navigation}
 		<a n:href="default" class="homepage-link">
 			&nbsp;
 		</a>
+	</div>
+</header>
 
-	</header>
+<div class="container">
 
 	{include content}
 
