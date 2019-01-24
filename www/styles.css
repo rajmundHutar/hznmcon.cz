@@ -206,6 +206,9 @@ nav#collapsed-nav {
 .markdown-content {
     position: relative;
 }
+.markdown-content p {
+    margin: 0;
+}
 
 .markdown-content a.markdown-edit {
     display: none;
@@ -220,6 +223,7 @@ nav#collapsed-nav {
     border-radius: 3px;
     background-color: #ebebeb;
     padding: 2px 5px 2px 5px;
+    font-size: 10px !important;
 }
 
 .hidden {
@@ -235,17 +239,26 @@ nav#collapsed-nav {
     min-height: 130px;
 }
 
-.info h3 {
+.info .title {
     flex: 1;
+    display: flex;
     background-image: url("./images/info_head.png");
     background-size: 100% 100%;
     background-repeat: no-repeat;
+    align-items: center;
+    justify-content: center;
+    min-width: 25%;
+}
+.info h3.smaller {
+    font-size: 120%;
 }
 
 .info div.text {
     flex: 5;
     padding: 20px;
     margin-left: 15px;
+    display: flex;
+    align-items: center;
 }
 
 .info div.text.odd {

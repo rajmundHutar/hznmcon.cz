@@ -4,36 +4,13 @@
 	</div>
 </div>
 
-
-<div class="info">
-	<h3>Kdy?</h3>
-	<div class="text odd">
-		{="4\. \- 8. července 2018. Termín vychází krásně do 4 volných dnů, takže bude program rozvolněnější a zbyde nám víc času na povídání, poflakování, koupání, hraní deskovek a zpívání u ohně. Registrace se otevře 17. května v 18:00."|markdown}
+{foreach $origanization as $row}
+	<div class="info">
+		<div class="title">
+			<h3 n:class="strlen($row['title']) > 15 ? smaller">{$row['title']|markdown:$row['id'] . '-title'}</h3>
+		</div>
+		<div n:class="text, $iterator->odd ? odd : even">
+			{$row['text']|markdown:$row['id']}
+		</div>
 	</div>
-</div>
-
-<div class="info">
-	<h3>Kde?</h3>
-	<div class="text even">
-		{="V Letohradě ve skautské klubovně. Mapa zde. GPS souřadnice: 50.0236964N, 16.5212328E. Spí se ve spacáku na místních matracích, v klubovně nebo pod širákem. Je tam sprcha."|markdown}
-	</div>
-</div>
-
-<h3>Kdy?</h3>
-<p>{="4\. \- 8. července 2018. Termín vychází krásně do 4 volných dnů, takže bude program rozvolněnější a zbyde nám víc času na povídání, poflakování, koupání, hraní deskovek a zpívání u ohně. Registrace se otevře 17. května v 18:00."|markdown}</p>
-<h3>Kde?</h3>
-<p>{="V Letohradě ve skautské klubovně. Mapa zde. GPS souřadnice: 50.0236964N, 16.5212328E. Spí se ve spacáku na místních matracích, v klubovně nebo pod širákem. Je tam sprcha."|markdown}</p>
-<h3>Proč?</h3>
-<p>{="Protože meloun má rád skoro každý."|markdown}</p>
-<h3>BUDE TAM JÍDLO?</h3>
-<p>{="Úja tradičně zajišťuje spoustu dobrot od toastů, snídaní a limonády až po nějaké to teplé jídlo v době oběda. Kuchyňka je plně využívána bufetem, takže není k dispozici účastníkům (ani lednice)."|markdown}</p>
-<h3>CO SE TAM BUDE DÍT?</h3>
-<p>{="Budou se hrát larpy ve dvou až třech blocích denně. Bude se sedět u ohně a bude se poflakovat na zahradě. Budou se hrát deskovky i venkovní hry. Každý může přispět svou nabídkou programu. Platí pravidlo: \“Každý musí dělat jenom to, co chce.\""|markdown}</p>
-<h3>BUDE MELOUN?</h3>
-<p>{="Ano. A nejen ten, i nějaké larpy."|markdown}</p>
-<h3>CHCI O TOM VČAS VĚDĚT!</h3>
-<p>{="Přidejte se do facebookové skupiny a sledujte, co se tam bude dít. Nebo nám napište mail, přidáme si vás do mailing listu a včas vám napíšeme, až se bude otevírat registrace."|markdown}</p>
-<h3>KDO ZA TO MŮŽE?</h3>
-<p>{=" Petr Toxi Veselý (právní zodpovědnost za festival a odborný dohled), Tereza Ciri Staňková a Sabina Triss Žilková (program a komunikace s účastníky). Kontaktovat nás můžete prostřednictvím [e-mailu](mailto:HZNMcon@gmail.com.)"|markdown}</p>
-
-
+{/foreach}
