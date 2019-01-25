@@ -48,4 +48,12 @@ class GamesModel {
 
 	}
 
+	public function delete(int $id) {
+
+		$this->db
+			->table(\Table::LARPS)
+			->wherePrimary($id)
+			->delete();
+
+	}
 }
