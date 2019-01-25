@@ -2,9 +2,10 @@
     <div class="col-12">
         <img src="{$baseUrl}/images/hznm_prihlasovani.png" class="img-fluid">
         <p>
-            {="Kapacita festivalu už se naplnila, každopádně se můžete přihlašovat jako náhradníci pomocí tohoto formuláře. Většinou se ještě pár míst uvolní po odpadlících. Pokud na HZNM conu něco uvádíte a zapomněli jste se přihlásit včas, pak samozřejmě klasicky vyplňte dotazník a ciťte se najisto přihlášení."|markdown}
+            {$infoText['registration']|markdown:'registration'}
         </p>
     </div>
+    <div class="col-12">
+        {$infoText['registration-form']|noescape}
+    </div>
 </div>
-
-

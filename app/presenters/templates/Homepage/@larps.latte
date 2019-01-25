@@ -1,40 +1,37 @@
-<div class="row">
+<header class="row my-5">
 	<div class="col-md-12 text-center">
 		<img src="{$baseUrl}/images/hznm_melouny_oddelovac.png" class="img-fluid"><br>
 		<img src="{$baseUrl}/images/hznm_larpy.png" class="img-fluid">
 	</div>
+</header>
 
-	<div class="col-md-12">
-		{$infoText['larpy']|markdown:'larpy'}
-	</div>
+<div class="col-md-12 my-5">
+	{$infoText['larpy']|markdown:'larpy'}
 </div>
 
 {if $larps}
 
 	<div n:foreach="$larps as $larp" n:class="row, larp, $iterator->isOdd() ? odd : even">
 
-		<div n:class="col-md-5, title, $iterator->isOdd() ? odd : even">
-			<a data-toggle="collapse" href="#larp-{$larp['id']}" role="button" aria-expanded="false" aria-controls="larp-{$larp['id']}">{$larp['name']}</a>
+		<div n:class="col-md-8, title, $iterator->isOdd() ? odd : even">
+			<input id="checkbox-{$iterator->counter}" type="checkbox"/>
+			<label data-toggle="collapse" href="#larp-{$larp['id']}" for="checkbox-{$iterator->counter}">
+				{$larp['name']}
+			</label>
 		</div>
-		<div n:class="col-md-7, authors, $iterator->isOdd() ? odd : even">
-			<div class="row">
-				<div class="col-12 col-md-6">
-					<div class="tit">Autoři:</div>
-					<div class="names">{$larp['authors']}</div>
-				</div>
-
-				<div class="col-12 col-md-6">
-					<div class="tit">Uvádí:</div>
-					<div class="names">{$larp['presenters']}</div>
-				</div>
-			</div>
-
+		<div n:class="col-md-4, authors, $iterator->isOdd() ? odd : even">
+			<div class="tit">Uvádí:</div>
+			<div class="names">{$larp['presenters']}</div>
 		</div>
 		<div n:class="col-12, wrapper, $iterator->isOdd() ? odd : even">
 
 			<div class="collapse" id="larp-{$larp['id']}">
 				<div n:class="text, $iterator->isOdd() ? odd : even">
 					{$larp['description']|markdown}
+					<div class="mt-4">
+						<span><strong>Autoři:</strong></span>
+						<span>{$larp['authors']}</span>
+					</div>
 				</div>
 
 				<div n:class="footer, $iterator->isOdd() ? odd : even" n:if="$larp['ld_link']">
@@ -44,5 +41,10 @@
 
 		</div>
 	</div>
+
+{else}
+	<p>
+		Larpy budou...
+	</p>
 
 {/if}

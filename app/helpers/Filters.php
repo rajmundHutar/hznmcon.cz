@@ -19,20 +19,26 @@ class MarkdownFilter {
 		$this->linkGenerator = $generator;
 	}
 
-	public function __invoke($markdown, $makrdownId = 'todo') {
+	public function __invoke($markdown, $makrdownId = null) {
 
 		$markdown = trim($markdown);
 
 		$parsedown = new \Parsedown();
 
+
 		$content = Html::el('div')
-			->addHtml(self::html($parsedown->text($markdown)))
-			->addAttributes([
+			->addHtml(self::html($parsedown->text($markdown)));
+
+		if (!$makrdownId) {
+			return $content;
+		}
+
+		if ($makrdownId && (true || $this->user->isLoggedIn())) { // TODO
+
+			$content->addAttributes([
 				'class' => 'markdown-content',
 				'data-content' => base64_encode($markdown),
 			]);
-
-		if (true || $this->user->isLoggedIn()) { // TODO
 
 			// Add link when user is logged in
 			$link = Html::el('a')->addText('Upravit')->addAttributes([

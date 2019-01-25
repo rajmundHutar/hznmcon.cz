@@ -133,8 +133,33 @@ nav#collapsed-nav {
     font-size: 150%;
 }
 
-#larps .larp .title a {
-    color: #000000;
+#larps .larp .title label:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#larps .larp .title input {
+    width: 0;
+    height: 0;
+}
+
+#larps .larp .title input::after {
+    content: ' ';
+    display: block;
+
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 5px solid black;
+
+    vertical-align: middle;
+    margin: -0.6rem 0 0 -0.5rem;
+    transform: translateY(-2px);
+
+    transition: transform .2s ease-out;
+}
+
+#larps .larp .title input:checked::after {
+    transform: rotate(90deg);
 }
 
 #larps .larp .authors {
@@ -143,7 +168,7 @@ nav#collapsed-nav {
     justify-content: center;
 }
 
-#larps .larp .authors .tit {
+#larps .larp .tit {
     padding: 0 20px 0 34px;
     font-weight: bold;
 }
