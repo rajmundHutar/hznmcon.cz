@@ -58,59 +58,59 @@ nav#collapsed-nav {
 }
 
 /** Menu **/
-.nav-link {
+header.main .nav-link {
     background-image: url("./images/hznmmenu.png");
     font-size: 0 !important;
     height: 100%;
 }
 
 /** O hznmconu */
-.nav-item:nth-child(1) .nav-link {
+header.main .nav-item:nth-child(1) .nav-link {
     background-size: 211%;
     background-position: -17% -2%;
 }
 
-.nav-item:nth-child(1) .nav-link:hover {
+header.main .nav-item:nth-child(1) .nav-link:hover {
     background-position: 80.3% -2%;
 }
 
 /** prakticke */
-.nav-item:nth-child(2) .nav-link {
+header.main .nav-item:nth-child(2) .nav-link {
     background-size: 189%;
     background-position: -17% 26%;
 }
 
-.nav-item:nth-child(2) .nav-link:hover {
+header.main .nav-item:nth-child(2) .nav-link:hover {
     background-position: 91.8% 26%;
 }
 
 /** prihlasovani */
-.nav-item:nth-child(3) .nav-link {
+header.main .nav-item:nth-child(3) .nav-link {
     background-size: 223%;
     background-position: -2% -70%;
 }
 
-.nav-item:nth-child(3) .nav-link:hover {
+header.main .nav-item:nth-child(3) .nav-link:hover {
     background-position: 90.7% -70%;
 }
 
 /** larpy */
-.nav-item:nth-child(4) .nav-link {
+header.main .nav-item:nth-child(4) .nav-link {
     background-size: 225%;
     background-position: -17% -49%;
 }
 
-.nav-item:nth-child(4) .nav-link:hover {
+header.main .nav-item:nth-child(4) .nav-link:hover {
     background-position: 75% -49%;
 }
 
 /** larpworkshop */
-.nav-item:nth-child(5) .nav-link {
+header.main .nav-item:nth-child(5) .nav-link {
     background-size: 200%;
     background-position: -1.5% -28%;
 }
 
-.nav-item:nth-child(5) .nav-link:hover {
+header.main .nav-item:nth-child(5) .nav-link:hover {
     background-position: 101% -28%;
 }
 
@@ -231,7 +231,7 @@ nav#collapsed-nav {
 .markdown-content {
     position: relative;
 }
-.markdown-content p {
+.markdown-content p:last-of-type {
     margin: 0;
 }
 
@@ -252,7 +252,7 @@ nav#collapsed-nav {
 }
 
 .hidden {
-    /*display: none;*/
+    display: none;
 }
 
 .admin nav {

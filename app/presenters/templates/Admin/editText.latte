@@ -3,6 +3,20 @@
 {form infoTextForm}
 
 	<div class="form-group">
+		{if $previewText['preview'] ?? null}
+			{input edit, class => 'btn btn-secondary'}
+		{else}
+			{input preview, class => 'btn btn-secondary'}
+		{/if}
+	</div>
+
+	{if $previewText['preview'] ?? null}
+
+		{$previewText['text']|markdown}
+
+	{/if}
+
+	<div n:class="form-group, ($previewText['preview'] ?? null) ? hidden">
 		{label text /}
 		{input text, class => 'form-control'}
 		<small class="form-text text-muted">Můžeš používat Markdown.</small>
@@ -10,7 +24,7 @@
 
 	<div class="form-group">
 		{input ok, class => 'btn btn-primary'}
-		<a n:href="games" class="btn btn-secondary">Zpět</a>
+		<a n:href="infoTexts" class="btn btn-secondary">Zpět</a>
 	</div>
 
 {/form}

@@ -9,6 +9,9 @@ use App\Models\InfoTextModel;
 
 class AdminPresenter extends BasePresenter {
 
+	/** @var string */
+	protected $previewText = [];
+
 	/** @var GamesModel */
 	protected $gamesModel;
 
@@ -34,7 +37,7 @@ class AdminPresenter extends BasePresenter {
 	}
 
 	public function renderGames() {
-		$this->template->games =  $this->gamesModel->fetchAll();
+		$this->template->games = $this->gamesModel->fetchAll();
 	}
 
 	public function renderEditGame(int $id = null) {
@@ -64,9 +67,21 @@ class AdminPresenter extends BasePresenter {
 
 		$text = $this->infoTextModel->fetch($id);
 
-		$this['infoTextForm']->setDefaults([
-			'text' => $text['text'],
-		]);
+		if ($this->previewText['text'] ?? null) {
+
+			$this['infoTextForm']->setDefaults([
+				'text' => $this->previewText['text'],
+			]);
+
+		} else {
+
+			$this['infoTextForm']->setDefaults([
+				'text' => $text['text'],
+			]);
+
+		}
+
+		$this->template->previewText = $this->previewText;
 
 	}
 
@@ -78,6 +93,12 @@ class AdminPresenter extends BasePresenter {
 			$this->flashMessage('Infotext uložen.', \Flash::Success);
 			$this->redirect('infoTexts');
 
+		}, function (array $values, bool $preview) {
+
+			$this->previewText = [
+				'preview' => $preview,
+				'text' => $values['text'] ?? null,
+			];
 
 		});
 	}
