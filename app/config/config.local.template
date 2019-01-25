@@ -1,4 +1,13 @@
 parameters:
+	users:
+		1:
+			email: rajmund.hutar@gmail.com
+			password:
+			role: admin
+		2:
+			email: cirilink@seznam.cz
+			password:
+			role: admin
 
 
 database:

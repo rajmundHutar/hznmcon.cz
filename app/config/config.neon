@@ -13,6 +13,8 @@ session:
 
 services:
 	router: App\RouterFactory::createRouter
+	authenticator: App\Models\UserModel(%users%)
+
 	## Models
 	- App\Models\GamesModel
 	- App\Models\InfoTextModel
@@ -20,6 +22,7 @@ services:
 	## Factories
 	- App\Forms\GamesFormFactory
 	- App\Forms\InfoTextFormFactory
+	- App\Forms\SignInFormFactory
 
 	## Helpers
 	- App\Helpers\MarkdownFilter

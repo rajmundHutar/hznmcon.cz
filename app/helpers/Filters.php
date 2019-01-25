@@ -29,18 +29,14 @@ class MarkdownFilter {
 		$content = Html::el('div')
 			->addHtml(self::html($parsedown->text($markdown)));
 
-		if (!$makrdownId) {
-			return $content;
-		}
-
-		if ($makrdownId && (true || $this->user->isLoggedIn())) { // TODO
+		// Add link when user is logged in
+		if ($makrdownId && $this->user->isLoggedIn()) {
 
 			$content->addAttributes([
 				'class' => 'markdown-content',
 				'data-content' => base64_encode($markdown),
 			]);
 
-			// Add link when user is logged in
 			$link = Html::el('a')->addText('Upravit')->addAttributes([
 				'href' => $this->linkGenerator->link('Admin:editText', ['id' => $makrdownId]),
 				'class' => 'markdown-edit',

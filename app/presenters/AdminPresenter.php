@@ -36,6 +36,16 @@ class AdminPresenter extends BasePresenter {
 		$this->infoTextModel = $infoTextModel;
 	}
 
+	public function startup() {
+		parent::startup();
+
+		if (!$this->user->isLoggedIn()) {
+			$this->flashMessage('Do administrace je potřeba se přihlásit');
+			$this->redirect('Sign:in');
+		}
+
+	}
+
 	public function renderGames() {
 		$this->template->games = $this->gamesModel->fetchAll();
 	}
