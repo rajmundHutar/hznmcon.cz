@@ -5,6 +5,7 @@ namespace App\Models;
 use Nette\Security\AuthenticationException;
 use Nette\Security\IAuthenticator;
 use Nette\Security\Identity;
+use Nette\Security\IIdentity;
 
 class UserModel implements IAuthenticator {
 
@@ -15,7 +16,7 @@ class UserModel implements IAuthenticator {
 		$this->users = $users;
 	}
 
-	function authenticate(array $credentials) {
+	function authenticate(array $credentials): IIdentity {
 
 		[$email, $password] = $credentials;
 
